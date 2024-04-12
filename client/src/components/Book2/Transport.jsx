@@ -11,7 +11,7 @@ export default function Transport() {
                         <div className="flex flex-col h-full">
                             <div className="md:flex md:flex-row-reverse md:items-center h-full">
                                 <div className="md:w-1/2 md:order-2 flex justify-center">
-                                    <img src={block.img} alt="Transport" className="object-cover w-full h-full rounded-lg shadow-md" />
+                                    <img src={block.img} alt="Transport" className="object-cover h-72 rounded-lg shadow-md" />
                                 </div>
                                 <div className="md:w-1/2 md:order-1">
                                     <div className="p-4">

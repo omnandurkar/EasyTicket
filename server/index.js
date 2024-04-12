@@ -355,6 +355,45 @@ app.post("/book-plane-ticket", async (req, res) => {
   });
 })
 
+// GET endpoint for fetching train bookings
+app.get("/book-train-ticket", async (req, res) => {
+  try {
+    const trainBookings = await BookTrain.find();
+    res.json({
+      success: true,
+      message: "Train bookings retrieved successfully",
+      data: trainBookings,
+    });
+  } catch (error) {
+    console.error("Error fetching train bookings:", error);
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch train bookings",
+      data: null,
+    });
+  }
+});
+
+// GET endpoint for fetching plane bookings
+app.get("/book-plane-ticket", async (req, res) => {
+  try {
+    const planeBookings = await Bookplane.find();
+    res.json({
+      success: true,
+      message: "Plane bookings retrieved successfully",
+      data: planeBookings,
+    });
+  } catch (error) {
+    console.error("Error fetching plane bookings:", error);
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch plane bookings",
+      data: null,
+    });
+  }
+});
+
+
 // Admin Api
 
 import Admin from "./models/Admin.js";

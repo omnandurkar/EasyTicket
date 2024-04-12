@@ -1,0 +1,43 @@
+.image{
+    height:190px;
+}
+.mycard{
+    width:390px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    position:relative;
+    height: 600px;
+
+}
+.mycard:hover{
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.2);
+    
+}
+
+.card-title{
+    font-size: 25px;
+    font-weight: 400;
+}
+.place{
+    font-size: 15px;
+    color:rgb(119, 118, 118);
+    font-weight:300;
+    position: absolute;
+    left:50px;
+    bottom:49px;
+}
+.date{
+    position:absolute;
+    left:300px;
+    bottom:85px;
+
+
+}
+.logo{
+    height:20px;
+}
+.mybtn{
+    position:absolute;
+    left:290px;
+    bottom: 15px;
+}

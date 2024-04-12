@@ -1,0 +1,55 @@
+.container-1 {
+  width: 90%;
+  border: 1px solid black;
+  background-color: rgba(250, 22, 22, 0.274);
+  padding: 20px;
+  margin-top: 20px auto;
+}
+  
+  .train-name {
+    font-size: 22px;
+    font-weight: 400;
+  }
+  .train-name p {
+    color: black;
+  }
+  
+  .info {
+    font-size: 15px;
+  }
+  
+  .train-info {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
+  .train-time p {
+    margin: 3px;
+  }
+  
+  .train-time {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .arrow-img {
+    height: 60px;
+    margin: 10px 20px;
+    margin-left: 10px;
+  }
+  
+  .book-train-btn{
+    background-color: #0dcaf0;
+    height: 44px;
+    border: none;
+    border-radius: 10px;
+    padding: 0px 30px;
+
+  }
+
+  .heading{
+    text-align: center;
+    margin: 20px;
+  }

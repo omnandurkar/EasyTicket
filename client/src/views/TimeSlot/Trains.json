@@ -1,0 +1,83 @@
+[
+    {
+      "_id": "1",
+      "trainName": "12890 NAGPUR EXPRESS",
+      "runsOn": "S M T W T F S Mail/Express (12779 Running Status)",
+      "departureTime": "04:30",
+      "arrivalTime": "08:30",
+      "arrivalDate": "Sat, 6 Apr"
+    },
+    {
+      "_id": "2",
+      "trainName": "12980 JODHPUR EXPRESS",
+      "runsOn": "S M T W T F S Mail/Express (12980 Running Status)",
+      "departureTime": "09:45",
+      "arrivalTime": "16:00",
+      "arrivalDate": "Sat, 7 Apr"
+    },
+    {
+      "_id": "3",
+      "trainName": "12321 HOWRAH MAIL",
+      "runsOn": "S M T W T F S Mail/Express (12321 Running Status)",
+      "departureTime": "14:00",
+      "arrivalTime": "08:00",
+      "arrivalDate": "Mon, 9 Apr"
+    },
+    {
+      "_id": "4",
+      "trainName": "12546 BHUBANESWAR EXPRESS",
+      "runsOn": "S M T W T F S Mail/Express (12546 Running Status)",
+      "departureTime": "06:15",
+      "arrivalTime": "22:30",
+      "arrivalDate": "Mon, 10 Apr"
+    },
+    {
+      "_id": "5",
+      "trainName": "12452 NEW DELHI EXPRESS",
+      "runsOn": "S M T W T F S Mail/Express (12452 Running Status)",
+      "departureTime": "21:30",
+      "arrivalTime": "15:45",
+      "arrivalDate": "Wed, 12 Apr"
+    },
+    {
+      "_id": "6",
+      "trainName": "12627 BANGALORE EXPRESS",
+      "runsOn": "S M T W T F S Mail/Express (12627 Running Status)",
+      "departureTime": "12:10",
+      "arrivalTime": "05:30",
+      "arrivalDate": "Thu, 13 Apr"
+    },
+    {
+      "_id": "7",
+      "trainName": "12910 AHMEDABAD EXPRESS",
+      "runsOn": "S M T W T F S Mail/Express (12910 Running Status)",
+      "departureTime": "08:45",
+      "arrivalTime": "16:00",
+      "arrivalDate": "Thu, 13 Apr"
+    },
+    {
+      "_id": "8",
+      "trainName": "12002 BHOPAL EXPRESS",
+      "runsOn": "S M T W T F S Mail/Express (12002 Running Status)",
+      "departureTime": "15:30",
+      "arrivalTime": "07:45",
+      "arrivalDate": "Sat, 15 Apr"
+    },
+    {
+      "_id": "9",
+      "trainName": "12368 KOLKATA EXPRESS",
+      "runsOn": "S M T W T F S Mail/Express (12368 Running Status)",
+      "departureTime": "20:15",
+      "arrivalTime": "14:20",
+      "arrivalDate": "Sun, 16 Apr"
+    },
+    {
+      "_id": "10",
+      "trainName": "12688 CHENNAI EXPRESS",
+      "runsOn": "S M T W T F S Mail/Express (12688 Running Status)",
+      "departureTime": "07:30",
+      "arrivalTime": "20:00",
+      "arrivalDate": "Sun, 16 Apr"
+    }
+  ]
+  
