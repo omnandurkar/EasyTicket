@@ -1,0 +1,33 @@
+
+    [
+    {
+        "title": "Book Aeroplane",
+        "name":  "Plane",
+        "transport":"flight",
+        "poster":"https://images.unsplash.com/photo-1525396524423-64f7b55f5b33?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "tag":"Embark on Your Next Adventure: Book Your Flight Today!",
+        "description": "Book your next flight with us and enjoy a seamless travel experience.",
+        "buttonText": "Book Plane",
+        "img": "https://plus.unsplash.com/premium_photo-1679830513869-cd3648acb1db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWlycGxhbmV8ZW58MHx8MHx8fDA%3D",
+        "details":"Booking.com is a reliable travel agent in India, which offers great deals on air tickets. Book flights for all destinations across India or the world at the lowest airfares with us. As one of the leading travel portals of India, we constantly endeavour to make your vacation memorable. So, why go anywhere else? Call us to save big on all kinds of travel products and services and have a memorable travel experience on small budget. We believe in creating awesome vacations for our clients through customized holiday packages & tours. Enjoy great savings on flights, hotels and holiday trips with EaseMyTrip.com.Cheap flights are available at EaseMyTrip.com, one of the leading travel portals in India. The company offers great discounts on domestic and international flight tickets. Being a reliable name in the traveling industry of India, we focus on providing a smooth providing booking experience to our customers. So, book air tickets at the lowest airfare by planning your trip with us. You can also get all relevant information like how to get the boarding passes, the difference between airline tickets and boarding pass tickets, flight status, arrival and departure times of the flights, web check-in and various information one needs to have before traveling. If you want to book your plane tickets at no convenience fee and looking for transparency in air ticket pricing, we are here to serve you with the best possible offers. To reduce your flight booking cost, we have tied up with several banking partners. You can avail the best flight ticket booking deals for all major low-cost carriers of India and abroad with us. Last minute discounts on air ticket booking are also available with us. So, go for a journey to your preferred destinations with the best airfare discounts.",
+        
+        "id":"1"
+        
+        
+    },
+    {
+        "title": "Book Train",
+        "transport":"Train Travel",
+        "poster":"https://www.alstom.com/sites/alstom.com/files/styles/cover_650/public/2022/05/19/NorskeTog_CoradiaNordic_render_Creative_and_Advanced_Design.jpg?h=16a6ccf5&itok=pikHkezZ",
+        "tag":"Your Journey Starts Here: Reserve Your Train Ticket Today!",
+        "name": "Train",
+        "description": "Travel comfortably by train to your destination. Book tickets hassle-free.",
+        "buttonText": "Book Train",
+        "img": "https://images.unsplash.com/photo-1601999007938-f584b47324ac?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "details":"The railway is the most affordable way to travel in India, and as a trustworthy travel brand, we understands the value of your money and desire to travel. To make your train ticket booking more convenient, we are pleased to become IRCTC Authorized partner. Customer can book their train tickets in the most convenient way with our website. You just need to visit our website or download our mobile app to make your train ticket booking with us.Travelling across the country has become easy due to online train ticket booking. You can visit almost every city by train at an affordable price. Train ticket booking provides several advantages such as low-cost travel, speed, convenience, and a picturesque journey. If you are planning to go to your hometown, a beautiful destination for your vacation, workcation, or any other place, the train is the best mode of transport for you. At EaseMyTrip, you can find multiple trains for your route, timings, fares, and seats. Also, if you want to save on your railway ticket, download EaseMyTrip and get notifications for all the latest offers on train ticket booking. At EaseMyTrip, we always come up with lots of exciting offers through which you can save money on travel.Travelling across the country is now easier than ever because of the complete digitization of the IRCTC ticketing procedure. Now, you can book train tickets online from the comfort of your home. And it’s not just the train tickets booking system that has been revolutionized. All other services such as checking the PNR status, live train status, train schedule, and train availability are easy-to-use as well. You only have to enter your IRCTC login credentials to book train tickets with ease.",
+        "id":"2"
+        
+        
+    }
+]
+
