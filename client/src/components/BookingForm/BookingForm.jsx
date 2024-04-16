@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function BookingForm(props) {
   const { id } = props;
@@ -25,34 +26,40 @@ function BookingForm(props) {
     }
   };
 
-  const bookPlane = async () => {
-    console.log("Attempting to book plane ticket...");
-    try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/book-plane-ticket`, {
-        from: from,
-        to: to,
-        date: date
-      });
-      console.log(response.data);
-      alert(response.data.message);
-      setFrom('');
-      setTo('');
-      setDate('');
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
+  // const bookPlane = async () => {
+  //   console.log("Attempting to book plane ticket...");
+  //   try {
+  //     const response = await axios.post(`${import.meta.env.VITE_API_URL}/book-plane-ticket`, {
+  //       from: from,
+  //       to: to,
+  //       date: date
+  //     });
+  //     console.log(response.data);
+  //     alert(response.data.message);
+  //     setFrom('');
+  //     setTo('');
+  //     setDate('');
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //   }
+  // };
 
   const bookTicket = () => {
-    console.log("Received id:", id);
-    if (id === 1) {
-      console.log("Booking plane ticket...");
-      bookPlane();
-    } else if (id === 2) {
-      console.log("Booking train ticket...");
-      bookTrain();
+    const userEmail = localStorage.getItem('email');
+    if (userEmail) {
+      console.log("Received id:", id);
+      if (id === 1) {
+        console.log("Booking plane ticket...");
+        
+      } else if (id === 2) {
+        console.log("Booking train ticket...");
+        bookTrain();
+      } else {
+        console.error('Invalid id');
+      }
     } else {
-      console.error('Invalid id');
+      console.log("User not signed in. Redirecting to sign-in page...");
+      window.location.href = '/signin'; 
     }
   };
 
@@ -74,7 +81,9 @@ function BookingForm(props) {
             <input type="date" id="dateInput" className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" value={date} onChange={(e) => setDate(e.target.value)} />
           </div>
           <div className="text-center">
+            <Link to="/timeslot">
             <button type="button" className="py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700" onClick={bookTicket}>Search</button>
+            </Link>
           </div>
         </form>
       </div>

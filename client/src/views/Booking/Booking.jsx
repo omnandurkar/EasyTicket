@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
@@ -7,6 +8,15 @@ import Navbar from '../../components/Navbar/Navbar.jsx';
 import Footer from '../../components/Footer/Footer.jsx';
 
 function Booking() {
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  // const trainName = params.get('trainName');
+  const trainName = localStorage.getItem("selectedTrainName");
+  const date = params.get('date');
+  const from = params.get('from');
+  const to = params.get('to');
+
+  console.log(trainName, date, from, to);
 
   const [payment, setPayment] = useState('');
   const [name, setName] = useState('');
@@ -16,6 +26,7 @@ function Booking() {
 
   const email = localStorage.getItem("email");
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -23,7 +34,11 @@ function Booking() {
       const response = await axios.post(`${import.meta.env.VITE_API_URL}/booking`, {
         name,
         phone,
-        email
+        email,
+        trainName,
+        from,
+        to,
+        date
       });
       // console.log(response.data);
       // alert('New passenger added!');
@@ -32,25 +47,29 @@ function Booking() {
     } catch (error) {
       console.error('Error submitting form:', error);
     }
+
+    setIsModalOpen(false)
   };
 
+
   return (
+    <>
 
     <div className=''>
       <Navbar />
       <div className='text-center bg-blue-500 text-white mt-5 py-3'>
         <h1 className='text-3xl font-bold'>PASSENGER DETAILS</h1>
         <div className="flex justify-center">
-          <span className='mr-2'>HDP TO AVG</span>
+          <span className='mr-2'>{from} TO {to}</span>
           <span>|</span>
-          <span className='ml-2'>WED, 10 APR 2024</span>
+          <span className='ml-2'>WED, {date}</span>
         </div>
       </div>
 
       <hr className='border-4 border-blue-500 my-5'></hr>
 
       <div className='mx-3'>
-        <h2 className="text-xl font-bold">HDP xyz EXPRESS(1234)</h2>
+        <h2 className="text-xl font-bold">{trainName}</h2>
       </div>
 
       <hr className='border-4 border-blue-500 my-5'></hr>
@@ -58,9 +77,8 @@ function Booking() {
       <div className='flex justify-around'>
         <div className='text-center'>
           <h3 className="text-lg font-bold">15:30</h3>
-          <p>Hadapsar</p>
-          <p>(HDP)</p>
-          <p>Tue, 09 Apr</p>
+          <p>{from}</p>
+          <p>Tue, {date}</p>
         </div>
 
         <div className='text-center'>
@@ -70,13 +88,14 @@ function Booking() {
 
         <div className='text-center'>
           <h3 className="text-lg font-bold">1:30</h3>
-          <p>Laturr</p>
-          <p>(LTR)</p>
-          <p>Wed, 10 Apr</p>
+          <p>{to}</p>
+   
+          <p>Wed, {date}</p>
         </div>
       </div>
 
       <hr className='border-4 border-blue-500 my-5'></hr>
+
 
 
       {!formSubmitted && (
@@ -89,31 +108,31 @@ function Booking() {
         </div>
       )}
 
-      <div className='container mx-auto border border-black rounded-lg p-6'>
+      <div className='container mx-auto border border-black rounded-lg p-6 w-4/5 shadow-lg '>
         {formSubmitted && (
-          <div className='user-detail-card'>
+          <div className='user-detail-card '>
             <h2 className="text-xl font-bold mb-4">Passenger Details</h2>
             <div className="flex flex-wrap mb-4">
               <div className="w-full md:w-1/2 mb-4 md:mb-0">
                 <label htmlFor="fullName" className="block text-gray-700 text-sm font-bold mb-2">Passenger Name</label>
-                <h4>{name}</h4>
+                <h4 className='text-lg font-extrabold'>{name}</h4>
               </div>
               <div className="w-full md:w-1/2">
                 <label htmlFor="phone" className="block text-gray-700 text-sm font-bold mb-2">Mobile Number</label>
                 <div className="flex items-center">
-                  <span className="mr-2">+91-</span>
-                  <span className=''>{phone}</span>
+                  <span className="mr-2"></span>
+                  <span className='text-lg font-extrabold'>{phone}</span>
                 </div>
               </div>
             </div>
             <hr className="my-4" />
-            <p className="text-sm text-gray-600">Your ticket will be sent to <a href={`mailto:${email}`} className='text-blue-500'>{email}</a> and +91-{phone}</p>
+            <p className="text-sm text-gray-600">Your ticket will be sent to <a href={`mailto:${email}`} className='text-blue-500'>{email}</a> and <a href = {`tel:${phone}`} className='text-blue-500'>{phone}</a></p>
           </div>
         )}
 
 
 
-        <div className='container p-2 pb-5'>
+        <div className='container p-2 mt-5 pb-5'>
           <h3 className="mb-3">Travel Insurance</h3>
           <div className="mb-3">
             <p className="mb-0">Do you want to purchase travel insurance? It costs ₹0.75 per person.</p>
@@ -134,15 +153,10 @@ function Booking() {
         <Link to="/timeslot" className='inline-block bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded border border-gray-400 mr-4'>
           Cancel
         </Link>
-        <Link to="/payment" className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <Link to="/ticket" className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           Proceed
         </Link>
       </div>
-
-
-
-
-
 
 
 
@@ -166,7 +180,7 @@ function Booking() {
               <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                 <div className="sm:flex sm:items-start">
                   <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10">
-                    {/* Icon */}
+                    {/* Icon */}<img className='rounded-full' src={localStorage.getItem("userPhoto")}/>
                   </div>
                   <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                     <h3 className="text-lg leading-6 font-medium text-gray-900" id="modal-title">
@@ -185,16 +199,15 @@ function Booking() {
                         </div>
                         <div className="mt-4">
                           <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+                          <button type="button" onClick={() => setIsModalOpen(false)} className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-800 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm">
+                  Cancel
+                </button>
                         </div>
                       </form>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                <button type="button" onClick={() => setIsModalOpen(false)} className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-800 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm">
-                  Cancel
-                </button>
+              
               </div>
             </div>
           </div>
@@ -202,11 +215,15 @@ function Booking() {
       )}
 
 
+      
 
 
-      {/* 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 */}
+
+ 
     </div>
-  )
+    
+    </>
+  );
 }
 
 export default Booking;

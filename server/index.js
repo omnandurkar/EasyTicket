@@ -235,10 +235,10 @@ app.post("/payment", async (req, res) => {
 
 
 app.post("/booking", async (req, res) => {
-  const { name, phone, gender, seat, email } = req.body;
+  const { name, phone, gender, seat, email, date, from, to, trainName } = req.body;
 
   try {
-    const book = await Booking.create({ name, phone, email });
+    const book = await Booking.create({ name, phone, email, date, from, to, trainName });
     res.json({
       success: true,
       message: "Details added Successfully",
@@ -271,6 +271,22 @@ app.get("/booking", async (req, res) => {
     });
   }
 });
+
+app.get("/booking/latest", async (req, res) => {
+  try {
+    const latestBooking = await Booking.findOne().sort({ _id: -1 });
+
+    if (!latestBooking) {
+      return res.status(404).json({ success: false, message: 'No bookings found.' });
+    }
+
+    res.status(200).json({ success: true, booking: latestBooking });
+  } catch (error) {
+    console.error('Error fetching latest booking:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch latest booking', error: error.message });
+  }
+});
+
 
 
 
@@ -373,6 +389,9 @@ app.get("/book-train-ticket", async (req, res) => {
     });
   }
 });
+
+
+
 
 // GET endpoint for fetching plane bookings
 app.get("/book-plane-ticket", async (req, res) => {

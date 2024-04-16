@@ -32,16 +32,17 @@ export default function AContactUs() {
 
     return (
         <>
-            <div className="container rounded ">
-                <h1 className=" mb-3">Contact Requests</h1>
-                <div className="row">
+            <div className='flex space-x-4 justify-center'>
+            <div className="container rounded">
+                <h1 className="mb-3">Contact Requests</h1>
+                <div className="row overflow-y-scroll h-2/6">
                     {contact.map((item, index) => {
                         const { _id, name, email } = item;
                         return (
-                            <div key={_id} className="col-lg-4 col-md-6 mb-4 mt-4">
-                                <div className="card h-100" style={{ cursor: 'pointer' }} onClick={() => handleContactClick(index)} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div key={_id} className="shadow border p-4 rounded-md mb-4 mt-4 ">
+                                <div className="" style={{ cursor: 'pointer' }} onClick={() => handleContactClick(index)} data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <div className="card-body">
-                                        <h4 className="card-title">{name}</h4>
+                                        <h4 className="font-bold">{name}</h4>
                                         <p className="card-text">{email}</p>
                                     </div>
                                 </div>
@@ -51,49 +52,51 @@ export default function AContactUs() {
                 </div>
             </div>
 
-            {/* Modal */}
-            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered modal-lg">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Message Details</h5>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body">
-                            {selectedContact && (
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-md-4">
-                                            <h5>Name</h5>
-                                            <p>{selectedContact.name}</p>
+            <div className='container output border p-5 rounded-md border-blue-600 h-4/5'>
+                <div className="" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered modal-lg w-full">
+                        <div className="modal-content space-y-6">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="exampleModalLabel">Message Details</h5>
+                            </div>
+                            <div className="container mx-auto ">
+                                {selectedContact && (
+                                    <div className="bg-white rounded-lg border shadow-md p-6">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div className="">
+                                                <h5 className="font-semibold">Name</h5>
+                                                <p>{selectedContact.name}</p>
+                                            </div>
+                                            <div className="">
+                                                <h5 className="font-semibold">Email</h5>
+                                                <p>{selectedContact.email}</p>
+                                            </div>
+                                              {/* <div className="">
+                                                <h5 className="font-semibold">Phone</h5>
+                                                <p>{selectedContact.phone}</p>
+                                            </div> */}
                                         </div>
-                                        <div className="col-md-4">
-                                            <h5>Email</h5>
-                                            <p>{selectedContact.email}</p>
-                                        </div>
-                                        <div className="col-md-4">
-                                            <h5>Phone</h5>
-                                            <p>{selectedContact.phone}</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <hr />
-                                    <div className="row">
-                                        <div className="col-md-12">
-                                            <h5>Message</h5>
+                                        <hr className="my-4" />
+                                        <div className="">
+                                            <h5 className="font-semibold">Message</h5>
                                             <p>{selectedContact.message}</p>
                                         </div>
                                     </div>
-                                </div>
-                            )}
+                                )}
+                            </div>
+
+                            <div className="modal-footer space-x-5 mt-2">
+                                <button type="button" className="border p-2 rounded-md bg-blue-600 hover:bg-blue-500 text-white" onClick={() => resolveIssue(contact.indexOf(selectedContact))}>Resolve Issue</button>
+                                <button type="button" className="border p-2 rounded-md bg-gray-500 hover:bg-gray-600 text-white" data-bs-dismiss="modal">Close</button>
+                            </div>
                         </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-outline-info" onClick={() => resolveIssue(contact.indexOf(selectedContact))} >Resolve Issue</button>
-                            <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                                <div className='flex justify-center'>
+                        <button type='button' className='border p-2 shadow my-10 rounded-md bg-blue-600 hover:bg-blue-500 text-white ' onClick={loadContactUsDetails}  > Fetch Contact Reqests</button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </>
     );
 }

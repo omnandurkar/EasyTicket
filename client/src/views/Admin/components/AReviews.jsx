@@ -33,31 +33,29 @@ export default function AReviews() {
   }, []);
 
   return (
-    <div className="container">
-      <h1 className="my-4">All Reviews</h1>
-      <div className="row">
-        {reviews.map((review, index) => (
-          <div key={index} className="col-md-6 mb-4">
-            <div className="card p-3 px-4 card-wth border-info shadow">
-              <div className="d-flex align-items-center">
-                <img src={review.userPhoto} alt='User' className="icon-wth rounded-circle "/>
-                <div className="ms-4">
-                  <h6 className="fw-bold m-0">{review.name}</h6>
-                </div>
-              </div>
-              <div className='m-3 mx-1 border inner-shadow p-2'>
-                <p className="ms-2">{review.message}</p>
-              </div>
-              <button
-                className="btn btn-danger mt-3"
-                onClick={() => deleteReview(review._id)}
-              >
-                Delete
-              </button>
+    <div className="container mx-auto">
+    <h1 className="my-4 text-2xl font-bold">All Reviews</h1>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {reviews.map((review, index) => (
+        <div key={index} className="bg-white rounded-lg shadow-md border p-4">
+          <div className="flex items-center mb-3">
+            <img src={review.userPhoto} alt="User" className="w-12 h-12 rounded-full" />
+            <div className="ml-4">
+              <h6 className="font-semibold">{review.name}</h6>
             </div>
           </div>
-        ))}
-      </div>
+          <div className="border-t border-gray-200 pt-3">
+            <p className="text-gray-700">{review.message}</p>
+          </div>
+          <button
+            className="mt-3 px-4 py-2 bg-red-500 text-white  rounded-md hover:bg-red-600 focus:outline-none"
+            onClick={() => handleDelete(review._id)}
+          >
+            Delete
+          </button>
+        </div>
+      ))}
     </div>
+  </div>
   );
 }

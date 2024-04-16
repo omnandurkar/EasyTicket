@@ -48,7 +48,7 @@ function App() {
   }
 
   return (
-    <div className='body mt-5'>
+    <div className='body '>
       <Navbar />
       <div className="container mt-5">
         <div className='max-w-lg mx-auto bg-white rounded-lg shadow-lg p-8 border'>
@@ -69,12 +69,12 @@ function App() {
         </div>
       </div>
 
-      <div className="body p-5">
+      <div className="body p-5 md:p-20">
         <h1 className="text-center pt-4 text-info-emphasis mb-4">Read what our Customers say</h1>
         <div className="container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {reviews.map((review) => (
-              <div key={review._id} className="w-full sm:w-1/2 md:w-5/6 mx-auto">
+              <div key={review._id} className="w-full sm:w-1/2 md:w-5/6 mx-auto hover:scale-90 duration-500">
                 <ReviewCard {...review} loadReview={loadReview} />
               </div>
             ))}

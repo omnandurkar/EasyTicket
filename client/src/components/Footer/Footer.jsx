@@ -7,7 +7,7 @@ export default function Footer() {
 
   <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-5 text-center">
     <div>
-      <a className="flex-none text-xl font-semibold text-black" href="#" aria-label="Brand">Brand</a>
+      <a className="flex-none text-xl font-semibold text-black" href="#" aria-label="Brand">EasyTicket</a>
     </div>
    
 

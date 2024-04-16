@@ -19,7 +19,7 @@ export default function Destination() {
         <div>
             <Navbar />
             <div className="container-fluid p-0 relative mt-5">
-                <img src={booking.poster} alt="Poster" className="w-full h-auto" style={{ height: '570px', filter: 'brightness(70%)' }} />
+                <img src={booking.poster} alt="Poster" className="w-full h-auto z-0" style={{ height: '570px', filter: 'brightness(70%)' }} />
                 <div className="absolute top-0 left-1/2 mt-5 transform -translate-x-1/2 text-center text-white">
                     <h1 className="mb-4">{booking.tag}</h1>
                     <p>{booking.description}</p>
@@ -27,7 +27,7 @@ export default function Destination() {
             </div>
             <BookingForm id={parseInt(booking.id)} />
             <div className="mt-5 text-center">
-                <h2 className="mt-5 text-info-emphasis">Top {booking.transport} Deals From India:</h2>
+                {/* <h2 className="mt-5 text-info-emphasis">Top {booking.transport} Deals From India:</h2>   */}
             </div>
             <div className="container mt-3 mx-auto">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

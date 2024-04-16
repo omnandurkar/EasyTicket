@@ -9,6 +9,9 @@ import Admin from './views/Admin/Admin';
 import Destination from './views/Destination/Destination';
 import TimeSlot from './views/TimeSlot/TimeSlot';
 import Booking from './views/Booking/Booking';
+import TicketBooked from './views/TickedBooked/TicketBooked';
+import AloginPage from './views/Admin/ALogin';
+
 
 function App() {
 
@@ -49,7 +52,8 @@ function App() {
 
     {
       path : "/badmin",
-      element : <Admin/>
+      // element : <Admin/>
+      element : <AloginPage/>
     },
 
     {
@@ -65,16 +69,21 @@ function App() {
     {
       path : "/booking",
       element : <Booking/>
+    },
+
+    {
+      path: "ticket",
+      element: <TicketBooked/>
     }
 
   ])
  
 
   return (
-    <>
+    <div className=''>
     
       <RouterProvider router = {router} />
-    </>
+    </div>
   )
 }
 

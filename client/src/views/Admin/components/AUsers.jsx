@@ -27,9 +27,9 @@ export default function AUsers() {
                 {users.map((user) => {
                     const { _id, userName, isLoggedIn } = user;
                     return (
-                        <div key={_id} className="border p-4 rounded  bg-white ">
+                        <div key={_id} className="border p-4 rounded  bg-white shadow ">
                             <h3 className="text-lg font-semibold mb-2">User: {userName}</h3>
-                            <p className="text-sm">Status: {isLoggedIn ? <span className='text-success '>Online</span> : <span className='text-danger '>Offline</span>}</p>
+                            <p className="text-sm">Status: {isLoggedIn ? <span className='text-green-500 '>Online</span> : <span className='text-red-500 '>Offline</span>}</p>
                         </div>
                     );
                 })}

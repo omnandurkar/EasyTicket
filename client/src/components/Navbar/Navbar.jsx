@@ -25,9 +25,9 @@ const ProfileDropDown = ({ user, handleLogout }) => {
     }, []);
 
     return (
-        <div className={`relative`}>
-            <div className="flex items-center space-x-4">
-                <button ref={profileRef} className="w-10 h-10 outline-none rounded-full ring-offset-2 ring-gray-200 ring-2 lg:focus:ring-indigo-600"
+        <div className={`relative `}>
+            <div className="flex items-center space-x-4 ">
+                <button ref={profileRef} className="w-10 h-10 ms-2 outline-none rounded-full ring-offset-2 ring-gray-200 ring-2 lg:focus:ring-indigo-600"
                     onClick={() => setState(!state)}
                 >
                     <img
@@ -41,7 +41,7 @@ const ProfileDropDown = ({ user, handleLogout }) => {
                     <span className="block text-sm text-gray-500">{user.email}</span>
                 </div>
             </div>
-            <ul className={`bg-white top-12 right-0 mt-5 space-y-5 lg:absolute lg:border lg:rounded-md lg:text-sm lg:w-52 lg:shadow-md lg:space-y-0 lg:mt-0 ${state ? '' : 'lg:hidden'}`}>
+            <ul className={`bg-gray-100 top-12 right-0 mt-5 space-y-5 lg:absolute lg:border lg:rounded-md lg:text-sm lg:w-52 lg:shadow-md lg:space-y-0 lg:mt-0 ${state ? '' : 'lg:hidden'}`}>
                 {navigation.map((item, idx) => (
                     <li key={idx}>
                         <Link className="block text-gray-600 lg:hover:bg-gray-50 lg:p-2.5" to={item.path}>
@@ -78,6 +78,7 @@ const Navbar = () => {
             // toast.success("Logged out successfully");
             localStorage.clear();
             await auth.signOut();
+            window.location.reload();
         } catch (error) {
             console.error("Error logging out:", error);
         }
@@ -88,23 +89,23 @@ const Navbar = () => {
         { title: "Home", path: "/" },
         { title: "Contact Us", path: "/contact" },
         { title: "Reviews", path: "/review" },
-        { title: "xyz", path: "/" },
+        // { title: "xyz", path: "/" },
     ];
 
     return (
-        <nav className="bg-white border-b">
-            <div className="flex items-center space-x-8 py-3 px-4 max-w-screen-xl mx-auto md:px-8">
+        <nav className="bg-gray-100 border-b shadow-lg ">
+            <div className="flex items-center space-x-8  px-4 max-w-screen-xl mx-auto md:px-8">
                 <div className="flex-none lg:flex-initial">
                     <Link to="/">
-                        <h1 className="text-2xl font-mono font-extrabold">Booking</h1>
+                        <h1 className="text-2xl font-extrabold">EasyTicket</h1>
                     </Link>
                 </div>
                 <div className="flex-1 flex items-center justify-between">
-                    <div className={`bg-white absolute z-20 w-full top-16 left-0 p-4 border-b lg:static lg:block lg:border-none ${menuState ? '' : 'hidden'}`}>
+                    <div className={`bg-gray-100 absolute z-20 w-full top-16 left-0 p-4 border-b lg:static lg:block lg:border-none ${menuState ? '' : 'hidden'}`}>
 
                         <ul className="mt-12 space-y-5 lg:flex lg:space-x-6 lg:space-y-0 lg:mt-0">
                             {navigation.map((item, idx) => (
-                                <li key={idx} className="text-gray-600 text-md font-mono hover:text-gray-900">
+                                <li key={idx} className="text-gray-600 text-md  hover:text-gray-900">
                                     <Link to={item.path}>
                                         {item.title}
                                     </Link>
