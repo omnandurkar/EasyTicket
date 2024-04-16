@@ -11,7 +11,7 @@ export default function HeroTrain() {
 
             <section className="py-28">
                 <div className="max-w-screen-xl mx-auto text-gray-600 gap-x-12 items-center justify-between overflow-hidden md:flex md:px-8">
-                    <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">
+                    <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl animate-fade-up">
                         <h1 className="text-sm text-blue-600 font-medium">
                             Over 2000+ successful Journeys
                         </h1>
@@ -33,7 +33,7 @@ export default function HeroTrain() {
                             </Link>
                         </div>
                     </div>
-                    <div className="flex-none mt-14 md:mt-0 md:max-w-xl">
+                    <div className="flex-none mt-14 md:mt-0 md:max-w-xl animate-fade-up ">
                         <img
                             src={Img1}
                             className=" md:rounded-tl-[108px]"
