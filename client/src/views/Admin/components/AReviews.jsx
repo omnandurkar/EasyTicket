@@ -49,7 +49,7 @@ export default function AReviews() {
           </div>
           <button
             className="mt-3 px-4 py-2 bg-red-500 text-white  rounded-md hover:bg-red-600 focus:outline-none"
-            onClick={() => handleDelete(review._id)}
+            onClick={() => deleteReview(review._id)}
           >
             Delete
           </button>
