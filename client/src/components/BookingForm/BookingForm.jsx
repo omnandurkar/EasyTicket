@@ -59,7 +59,7 @@ function BookingForm(props) {
       }
     } else {
       console.log("User not signed in. Redirecting to sign-in page...");
-      window.location.href = '/signin'; 
+      window.location.href = '/login'; 
     }
   };
 
