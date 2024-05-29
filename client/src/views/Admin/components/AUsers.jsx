@@ -28,7 +28,7 @@ export default function AUsers() {
                     const { _id, userName, isLoggedIn, userPhoto } = user;
                     return (
                         <div key={_id} className="border p-4 rounded  bg-white shadow ">
-                            <img src={userPhoto} alt="" />
+                            <img className="rounded-full h-14 w-14 " src={userPhoto} alt="" />
                             <h3 className="text-lg font-semibold mb-2">User: {userName}</h3>
                             <p className="text-sm">Status: {isLoggedIn ? <span className='text-green-500 '>Online</span> : <span className='text-red-500 '>Offline</span>}</p>
                         </div>
